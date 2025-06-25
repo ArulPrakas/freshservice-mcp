@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "domain": {
+      "type": "string",
+      "description": "The Freshservice domain (e.g., 'company.freshservice.com')"
+    },
+    "apikey": {
+      "type": "string",
+      "description": "The Freshservice API key for authentication"
+    },
+    "per_page": {
+      "type": "integer",
+      "description": "Number of entries to retrieve per page (default: 10, max: 100)"
+    },
+    "page": {
+      "type": "integer",
+      "description": "Page number to retrieve (default: 1)"
+    },
+    "email": {
+      "type": "string",
+      "description": "Filter by email address of the requester"
+    },
+    "mobile_phone_number": {
+      "type": "string",
+      "description": "Filter by mobile phone number of the requester"
+    },
+    "work_phone_number": {
+      "type": "string",
+      "description": "Filter by work phone number of the requester"
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Filter by active status - true for active requesters, false for deactivated, omit for both"
+    },
+    "query": {
+      "type": "string",
+      "description": "Complex query string for advanced filtering. Supports fields: first_name, last_name, job_title, primary_email, secondary_emails, work_phone_number, mobile_phone_number, department_id, reporting_manager_id, time_zone, language, location_id, created_at, updated_at, and custom fields. Example: \"job_title:'HR Manager' AND created_at:>'2018-08-10'\""
+    }
+  },
+  "required": ["domain", "apikey"]
+} 

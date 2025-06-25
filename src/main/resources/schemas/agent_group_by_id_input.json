@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "domain": {
+      "type": "string",
+      "description": "FreshService domain (e.g., 'company.freshservice.com')"
+    },
+    "apikey": {
+      "type": "string",
+      "description": "FreshService API key for authentication"
+    },
+    "agent_group_id": {
+      "type": "integer",
+      "description": "Agent group ID"
+    }
+  },
+  "required": ["domain", "apikey", "agent_group_id"]
+} 

@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "apikey": {
+      "type": "string",
+      "description": "API key to be used for authentication"
+    },
+    "domain": {
+      "type": "string",
+      "description": "Freshservice instance to be queried, e.g. 'coke.freshservice.com'"
+    },
+    "agent_id": {
+      "type": "integer",
+      "description": "ID of the agent to retrieve"
+    }
+  },
+  "required": ["apikey", "domain", "agent_id"]
+} 

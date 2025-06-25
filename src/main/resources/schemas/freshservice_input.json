@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "apikey": {
+      "type": "string",
+      "description": "api key to be used for authentication"
+    },
+    "domain": {
+      "type": "string",
+      "description": "freshservice instance to be queried, e.g. 'coke.freshservice.com'"
+    }
+  },
+  "required": ["apikey", "domain"]
+} 

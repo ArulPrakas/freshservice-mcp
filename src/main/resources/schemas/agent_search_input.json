@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "apikey": {
+      "type": "string",
+      "description": "API key to be used for authentication"
+    },
+    "domain": {
+      "type": "string",
+      "description": "Freshservice instance to be queried, e.g. 'coke.freshservice.com'"
+    },
+    "query": {
+      "type": "string",
+      "description": "Simple or compound query to filter agents. Supports fields like first_name, last_name, job_title, email, work_phone_number, mobile_phone_number, department_id, reporting_manager_id, time_zone, language, location_id, created_at, updated_at. Example: \"job_title:'HR Manager' AND created_at:>'2018-08-10'\""
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address to search for specific agent"
+    },
+    "mobile_phone_number": {
+      "type": "string",
+      "description": "Mobile phone number to search for agents"
+    },
+    "work_phone_number": {
+      "type": "string", 
+      "description": "Work phone number to search for agents"
+    },
+    "state": {
+      "type": "string",
+      "enum": ["fulltime", "occasional"],
+      "description": "Agent state - fulltime or occasional agents"
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Filter by active status - true for active agents, false for deactivated agents"
+    }
+  },
+  "required": ["apikey", "domain"]
+} 

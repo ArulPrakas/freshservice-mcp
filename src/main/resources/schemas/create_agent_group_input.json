@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "properties": {
+    "domain": {
+      "type": "string",
+      "description": "FreshService domain (e.g., 'company.freshservice.com')"
+    },
+    "apikey": {
+      "type": "string",
+      "description": "FreshService API key for authentication"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the agent group"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description about the group"
+    },
+    "business_hours_id": {
+      "type": "integer",
+      "description": "Unique ID of the business hours configuration associated with the group"
+    },
+    "escalate_to": {
+      "type": "integer",
+      "description": "The Unique ID of the user to whom an escalation email is sent if a ticket in this group is unassigned"
+    },
+    "unassigned_for": {
+      "type": "string",
+      "description": "Time period after which escalation email is sent (30m, 1h, 2h, 4h, 12h, 1d, 2d, 3d)"
+    },
+    "agent_ids": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Array of user IDs of agents who belong to the group"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Array of user IDs of agents who are members of the group"
+    },
+    "observers": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Array of user IDs of agents who are observers of the group"
+    },
+    "leaders": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Array of user IDs of agents who are leaders of the group"
+    },
+    "restricted": {
+      "type": "boolean",
+      "description": "Whether the group is a restricted group"
+    },
+    "approval_required": {
+      "type": "boolean",
+      "description": "Whether the restricted group requires approvals for membership changes"
+    },
+    "auto_ticket_assign": {
+      "type": "boolean",
+      "description": "Whether automatic ticket assignment is enabled"
+    },
+    "workspace_id": {
+      "type": "integer",
+      "description": "Workspace ID to which the group is mapped"
+    }
+  },
+  "required": ["domain", "apikey", "name"]
+} 

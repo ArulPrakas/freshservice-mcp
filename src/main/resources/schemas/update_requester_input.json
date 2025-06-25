@@ -1,0 +1,118 @@
+{
+  "type": "object",
+  "properties": {
+    "domain": {
+      "type": "string",
+      "description": "The Freshservice domain (e.g., 'company.freshservice.com')"
+    },
+    "apikey": {
+      "type": "string",
+      "description": "The Freshservice API key for authentication"
+    },
+    "requester_id": {
+      "type": "integer",
+      "description": "The unique ID of the requester to update"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address of the requester"
+    },
+    "first_name": {
+      "type": "string",
+      "description": "First name of the requester"
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Last name of the requester"
+    },
+    "job_title": {
+      "type": "string",
+      "description": "Job title of the requester"
+    },
+    "language": {
+      "type": "string",
+      "description": "Language preference (e.g., 'en', 'es', 'fr')"
+    },
+    "time_zone": {
+      "type": "string",
+      "description": "Time zone of the requester (e.g., 'Chennai', 'Pacific Time (US & Canada)')"
+    },
+    "time_format": {
+      "type": "string",
+      "enum": ["12h", "24h"],
+      "description": "Time format preference"
+    },
+    "primary_email": {
+      "type": "string",
+      "format": "email",
+      "description": "Primary email address of the requester"
+    },
+    "secondary_emails": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "email"
+      },
+      "description": "Secondary email addresses of the requester"
+    },
+    "work_phone_number": {
+      "type": "string",
+      "description": "Work phone number of the requester"
+    },
+    "mobile_phone_number": {
+      "type": "string",
+      "description": "Mobile phone number of the requester"
+    },
+    "department_ids": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Array of department IDs associated with the requester"
+    },
+    "can_see_all_tickets_from_associated_departments": {
+      "type": "boolean",
+      "description": "Allow requester to view tickets from associated departments"
+    },
+    "reporting_manager_id": {
+      "type": "integer",
+      "description": "ID of the requester's reporting manager"
+    },
+    "address": {
+      "type": "string",
+      "description": "Address of the requester"
+    },
+    "location_id": {
+      "type": "integer",
+      "description": "ID of the location associated with the requester"
+    },
+    "background_information": {
+      "type": "string",
+      "description": "Background information or description of the requester"
+    },
+    "belongs_to_workspace_ids": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Array of workspace IDs (MSP only)"
+    },
+    "can_see_all_tickets_from_associated_workspaces": {
+      "type": "boolean",
+      "description": "Allow requester to see tickets from associated workspaces (MSP only)"
+    },
+    "can_see_all_tickets_from_associated_workspace_ids": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Array of workspace IDs the requester can see tickets from (MSP only)"
+    },
+    "custom_fields": {
+      "type": "object",
+      "description": "Custom fields specific to the requester"
+    }
+  },
+  "required": ["domain", "apikey", "requester_id"]
+} 

@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "domain": {
+      "type": "string",
+      "description": "The Freshservice domain (e.g., 'company.freshservice.com')"
+    },
+    "apikey": {
+      "type": "string",
+      "description": "The Freshservice API key for authentication"
+    },
+    "requester_id": {
+      "type": "integer",
+      "description": "The unique ID of the requester"
+    }
+  },
+  "required": ["domain", "apikey", "requester_id"]
+} 
