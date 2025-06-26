@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Get Ticket Input",
+  "type": "object",
+  "properties": {
+    "domain": { "type": "string", "description": "Freshservice domain" },
+    "apikey": { "type": "string", "description": "API key" },
+    "ticketId": { "type": "string", "description": "Ticket ID" }
+  },
+  "required": ["domain", "apikey", "ticketId"]
+} 

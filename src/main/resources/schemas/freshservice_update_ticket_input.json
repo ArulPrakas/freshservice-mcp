@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Update Ticket Input",
+  "type": "object",
+  "properties": {
+    "domain": { "type": "string", "description": "Freshservice domain" },
+    "apikey": { "type": "string", "description": "API key" },
+    "ticketId": { "type": "string", "description": "Ticket ID" },
+    "subject": { "type": "string", "description": "Ticket subject" },
+    "description": { "type": "string", "description": "Ticket description" },
+    "requester_id": { "type": "integer", "description": "ID of the requester" },
+    "priority": { "type": "integer", "description": "Priority of the ticket (1-4)" },
+    "status": { "type": "integer", "description": "Status of the ticket (2=open, 3=pending, etc.)" },
+    "group_id": { "type": "integer", "description": "ID of the group to which the ticket is assigned" },
+    "type": { "type": "string", "description": "Type of ticket (e.g., Incident, Service Request)" },
+    "source": { "type": "integer", "description": "Source of the ticket (1=Email, 2=Portal, etc.)" },
+    "due_by": { "type": "string", "format": "date-time", "description": "Due by date/time (ISO 8601)" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Tags for the ticket"
+    },
+    "custom_fields": {
+      "type": "object",
+      "description": "Custom fields for the ticket"
+    }
+  },
+  "required": ["domain", "apikey", "ticketId", "subject", "description", "requester_id", "priority", "status"]
+} 
