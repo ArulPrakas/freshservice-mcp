@@ -192,18 +192,73 @@ Creates a new ticket in FreshService.
 - `apikey` (string, required): FreshService API key
 - `subject` (string, required): Ticket subject
 - `description` (string, required): Ticket description
-- `priority` (integer, optional): Priority level
-- `status` (integer, optional): Status ID
-- `requester_id` (integer, optional): Requester ID
+- `requester_id` (integer, required): Requester ID
+- `priority` (integer, required): Priority level (1-4)
+- `status` (integer, required): Status ID (2=open, 3=pending, etc.)
+- `group_id` (integer, optional): Group ID
+- `type` (string, optional): Ticket type (e.g., Incident, Service Request)
+- `source` (integer, optional): Source (1=Email, 2=Portal, etc.)
+- `due_by` (string, optional): Due by date/time (ISO 8601)
+- `tags` (array of strings, optional): Ticket tags
+- `custom_fields` (object, optional): Custom fields
+
+**Example:**
+```json
+{
+  "domain": "company.freshservice.com",
+  "apikey": "your-api-key",
+  "subject": "Cannot access VPN",
+  "description": "User cannot connect to VPN from home.",
+  "requester_id": 12345,
+  "priority": 2,
+  "status": 2,
+  "group_id": 1001,
+  "type": "Incident",
+  "source": 1,
+  "due_by": "2024-07-01T17:00:00Z",
+  "tags": ["vpn", "remote"],
+  "custom_fields": {"location": "Home"}
+}
+```
 
 #### `update_ticket`
-Updates an existing ticket.
+Updates an existing ticket in FreshService.
 
 **Parameters:**
 - `domain` (string, required): FreshService domain
 - `apikey` (string, required): FreshService API key
-- `ticket_id` (integer, required): Ticket ID
-- Various optional update fields
+- `ticketId` (string, required): Ticket ID
+- `subject` (string, required): Ticket subject
+- `description` (string, required): Ticket description
+- `requester_id` (integer, required): Requester ID
+- `priority` (integer, required): Priority level (1-4)
+- `status` (integer, required): Status ID (2=open, 3=pending, etc.)
+- `group_id` (integer, optional): Group ID
+- `type` (string, optional): Ticket type (e.g., Incident, Service Request)
+- `source` (integer, optional): Source (1=Email, 2=Portal, etc.)
+- `due_by` (string, optional): Due by date/time (ISO 8601)
+- `tags` (array of strings, optional): Ticket tags
+- `custom_fields` (object, optional): Custom fields
+
+**Example:**
+```json
+{
+  "domain": "company.freshservice.com",
+  "apikey": "your-api-key",
+  "ticketId": "56789",
+  "subject": "Cannot access VPN (updated)",
+  "description": "User still cannot connect to VPN after troubleshooting.",
+  "requester_id": 12345,
+  "priority": 2,
+  "status": 3,
+  "group_id": 1001,
+  "type": "Incident",
+  "source": 1,
+  "due_by": "2024-07-02T17:00:00Z",
+  "tags": ["vpn", "remote", "escalated"],
+  "custom_fields": {"location": "Home"}
+}
+```
 
 ## Prerequisites
 
